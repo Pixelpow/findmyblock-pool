@@ -1,6 +1,3 @@
-# findmyblock-pool
-Web interface for public-pool backend - Anonymous Bitcoin mining
-
 # 🪙 FindMyBlock Pool
 
 Web interface for anonymous Bitcoin solo mining.
