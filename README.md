@@ -1,6 +1,6 @@
 # 🪙 FindMyBlock Pool
 
-**Anonymous Bitcoin solo mining pool with cyberpunk interface**
+**Anonymous Bitcoin solo mining pool***
 
 ⚠️ **This interface uses [public-pool](https://github.com/benjamin-wilson/public-pool) backend by Benjamin Wilson**
 
