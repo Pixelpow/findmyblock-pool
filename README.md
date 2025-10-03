@@ -38,7 +38,7 @@ npm start
 ## 📞 Contact
 
 - Website: https://findmyblock.xyz
-- Issues: [GitHub Issues](https://github.com/YOUR_USERNAME/findmyblock-pool/issues)
+- Issues: [GitHub Issues](https://github.com/pixelpow/findmyblock-pool/issues)
 
 ## ⭐ Support
 
