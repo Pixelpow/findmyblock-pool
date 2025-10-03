@@ -1,43 +1,54 @@
 # 🪙 FindMyBlock Pool
 
-Web interface for anonymous Bitcoin solo mining.
+**Anonymous Bitcoin solo mining pool with cyberpunk interface**
 
-**⚠️ Important: This interface uses the [public-pool](https://github.com/benjamin-wilson/public-pool) backend created by Benjamin Wilson.**
+⚠️ **This interface uses [public-pool](https://github.com/benjamin-wilson/public-pool) backend by Benjamin Wilson**
 
-## 🚀 Try it
+## 🚀 Live Demo
 
-**Live site:** https://findmyblock.xyz
+**Website:** https://findmyblock.xyz
 
-## 🏗️ How it works
+## ✨ Features
 
-- **Frontend**: This project (React, browser-side)  
-- **Backend**: [public-pool](https://github.com/benjamin-wilson/public-pool)
-- **Data**: None stored, fully anonymous
+- 🔒 **Anonymous** - No data stored, client-side only
+- 📊 **Real-time stats** - Network hashrate, pool hashrate, difficulty  
+- 🎮 **Device monitoring** - BitAxe, AvalonNano3, NerdMiner support
+- 🏆 **Pool challenges** - Seasonal events for miners
+- 🎯 **Solo mining** - Keep 100% of block rewards
+- ⚡ **Quick connect** - Instant stratum connection
 
+## 🎨 Tech Stack
+
+- **React 19** + **Tailwind CSS**
+- **Framer Motion** animations
+- **Recharts** for statistics  
+- **Custom cyberpunk theme**
 
 ## 📦 Installation
 
-If you want to run the interface locally:
-git clone https://github.com/pixelpow/findmyblock-pool.git
+git clone https://github.com/YOUR_USERNAME/findmyblock-pool.git
 cd findmyblock-pool
 npm install
 npm start
 
+text
 
+**Backend required:** public-pool server on port 23334
 
-**Note:** You need a running public-pool server somewhere.
+## 🏗️ Architecture
+
+Miners → public-pool backend → FindMyBlock interface → Browser
+
+text
 
 ## 🙏 Credits
 
-- **public-pool backend**: [Benjamin Wilson](https://github.com/benjamin-wilson)
-- **FindMyBlock interface**: Developed by me
+- **Backend:** [Benjamin Wilson](https://github.com/benjamin-wilson) - public-pool
+- **Interface:** Developed by [YOUR_NAME]
 
 ## 📞 Contact
 
-- Website: https://findmyblock.xyz
-- Issues: [GitHub Issues](https://github.com/pixelpow/findmyblock-pool/issues)
+- **Website:** https://findmyblock.xyz
+- **Email:** powhashyt@proton.me
 
-## ⭐ Support
-
-If this helped you, give it a star ⭐!
-
+⭐ **Star this repo if you like it!**
