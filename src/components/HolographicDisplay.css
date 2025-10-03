@@ -1,0 +1,114 @@
+.holographic-container {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    perspective: 1000px;
+}
+
+.scan-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(30, 64, 175, 0),
+        rgba(30, 64, 175, 0.2) 50%,
+        rgba(30, 64, 175, 0)
+    );
+    background-size: 100% 4px;
+    animation: scan-lines-anim 10s linear infinite;
+    z-index: 1;
+}
+
+@keyframes scan-lines-anim {
+    from { background-position: 0 0; }
+    to { background-position: 0 400px; }
+}
+
+.perspective-container {
+    transform-style: preserve-3d;
+}
+
+.hologram-content {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateX(60deg);
+    transform-style: preserve-3d;
+}
+
+.bitcoin-logo-container {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: float-anim 8s ease-in-out infinite, rotate-3d-anim 25s linear infinite;
+    z-index: 10;
+}
+
+.bitcoin-logo {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 15px #F59E0B);
+}
+
+.glow-pulse .bitcoin-logo {
+    animation: glow-pulse-anim 1.5s ease-out 2;
+}
+
+@keyframes float-anim {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes rotate-3d-anim {
+    from { transform: rotateY(0deg) rotateX(10deg); }
+    to { transform: rotateY(360deg) rotateX(10deg); }
+}
+
+@keyframes glow-pulse-anim {
+    0%, 100% { filter: drop-shadow(0 0 15px #F59E0B); }
+    50% { filter: drop-shadow(0 0 35px #0EA5E9) drop-shadow(0 0 10px #F59E0B); }
+}
+
+.ring-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: ring-orbit-anim 20s linear infinite;
+}
+
+.ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    background: conic-gradient(from 0deg, #0EA5E9, transparent, #0EA5E9, transparent) border-box;
+    mask-image: radial-gradient(transparent 65%, black 66%);
+}
+
+@keyframes ring-orbit-anim {
+    from { transform: rotateZ(0deg); }
+    to { transform: rotateZ(360deg); }
+}
+
+.time-since-block {
+    position: absolute;
+    bottom: -50px;
+    text-align: center;
+    z-index: 11;
+    color: white;
+    text-shadow: 0 0 5px #0EA5E9;
+}

@@ -1,0 +1,123 @@
+:root {
+  --cc-border: #1f3344;
+  --cc-glow: 255,184,76;
+}
+
+.challenge-card-base {
+  position: relative;
+  border: 1px solid var(--cc-border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #0e1c27;
+  backdrop-filter: blur(8px);
+  transition: border-color .35s, box-shadow .35s, background .45s;
+}
+.challenge-card-base:hover {
+  border-color: rgba(var(--cc-glow),0.45);
+  box-shadow: 0 0 0 1px rgba(var(--cc-glow),0.15), 0 8px 22px -6px rgba(0,0,0,0.6), 0 0 24px -4px rgba(var(--cc-glow),0.15);
+}
+
+/* Variant 1: Subtle vertical gradient */
+.variant-1 { background: linear-gradient(to bottom,#142736,#0d1b26 55%,#0a1620); }
+.variant-1:before { content:""; position:absolute; inset:0; background: radial-gradient(circle at 70% 15%, rgba(var(--cc-glow),0.08), transparent 60%); opacity:.9; pointer-events:none; }
+
+/* Variant 2: Frosted glass */
+.variant-2 { background: linear-gradient(135deg, rgba(20,45,65,0.65), rgba(10,25,38,0.55)); backdrop-filter: blur(14px) saturate(160%); }
+.variant-2:before { content:""; position:absolute; inset:0; background: linear-gradient(160deg, rgba(var(--cc-glow),0.10), transparent 50%); mix-blend-mode:screen; }
+
+/* Variant 3: Gold outline minimal */
+.variant-3 { background: #0a1822; border:1px solid rgba(var(--cc-glow),0.35); }
+.variant-3:hover { box-shadow: 0 0 0 1px rgba(var(--cc-glow),0.4), 0 0 18px -2px rgba(var(--cc-glow),0.3); }
+.variant-3:before { content:""; position:absolute; inset:0; background: linear-gradient(90deg, rgba(var(--cc-glow),0.08), transparent 40%, transparent 60%, rgba(var(--cc-glow),0.1)); opacity:.25; }
+
+/* Variant 4: Diagonal stripes */
+.variant-4 { background: repeating-linear-gradient(135deg, #122533, #122533 14px, #0e1f2b 14px, #0e1f2b 28px); }
+.variant-4:before { content:""; position:absolute; inset:0; background: linear-gradient(to bottom, rgba(0,0,0,0.3), transparent 60%); }
+
+/* Variant 5: Hex faint grid */
+.variant-5 { background: #0b1a24; }
+.variant-5:before { content:""; position:absolute; inset:0; background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0); background-size: 18px 18px; opacity:.25; }
+.variant-5:after { content:""; position:absolute; inset:0; background: linear-gradient(140deg, rgba(var(--cc-glow),0.12), transparent 55%); pointer-events:none; }
+
+/* Variant 6: Copper glow */
+.variant-6 { background: radial-gradient(circle at 30% 20%, rgba(255,170,90,0.18), transparent 60%), linear-gradient(180deg,#132a38,#0c1c25); }
+.variant-6:before { content:""; position:absolute; inset:0; background: linear-gradient(120deg, rgba(255,160,70,0.15), transparent 55%); mix-blend-mode:overlay; }
+
+/* Variant 7: Blueprint grid */
+.variant-7 { background: linear-gradient(#112838,#0a1823); }
+.variant-7:before { content:""; position:absolute; inset:0; background-image: linear-gradient(rgba(120,180,220,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(120,180,220,0.08) 1px, transparent 1px); background-size: 34px 34px; opacity:.35; }
+
+/* Variant 8: Dark embossed */
+.variant-8 { background: linear-gradient(145deg,#0f1f2b,#071018 65%); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04); }
+.variant-8:before { content:""; position:absolute; inset:0; background: linear-gradient(to top, rgba(255,255,255,0.04), transparent 70%); }
+
+/* Variant 9: Orbit rings */
+.variant-9 { background: radial-gradient(circle at 50% 45%, rgba(var(--cc-glow),0.09), transparent 65%), #0d1c26; }
+.variant-9:before { content:""; position:absolute; inset:0; background: repeating-radial-gradient(circle at 50% 45%, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 8px); opacity:.35; }
+
+/* Variant 10: Pulse edge */
+.variant-10 { background: linear-gradient(#102333,#09151d); }
+.variant-10:before { content:""; position:absolute; inset:0; background: linear-gradient(90deg, rgba(var(--cc-glow),0.25), transparent 40%, transparent 60%, rgba(var(--cc-glow),0.25)); opacity:0; transition:opacity .6s; }
+.variant-10:hover:before { opacity:.35; }
+.variant-10:hover { box-shadow: 0 0 0 1px rgba(var(--cc-glow),0.3), 0 0 36px -4px rgba(var(--cc-glow),0.35); }
+
+/* Inner content layering fix */
+.challenge-card-base > * { position: relative; z-index: 2; }
+.challenge-card-base .progress-glow { filter: drop-shadow(0 0 4px rgba(var(--cc-glow),0.35)); }
+
+/* Flat mode (used for Finished Table layout) */
+.flat-mode .challenge-card-base {
+  background: #0e1d29 !important;
+  border: 1px solid #1e2f3b !important;
+  box-shadow: none !important;
+}
+.flat-mode .challenge-card-base:before,
+.flat-mode .challenge-card-base:after { display: none !important; }
+.flat-mode .challenge-card-base:hover {
+  border-color: rgba(var(--cc-glow),0.55) !important;
+  box-shadow: 0 0 0 1px rgba(var(--cc-glow),0.35), 0 4px 14px -4px rgba(var(--cc-glow),0.25) !important;
+}
+
+/* ================= Minimal unified theme overrides ================= */
+.challenges-minimal-theme .challenge-card-base {
+  background: rgba(15,23,42,0.65) !important; /* slate-900/65 */
+  border: 1px solid rgba(71,85,105,0.5) !important; /* slate-600/50 */
+  box-shadow: 0 4px 18px -6px rgba(0,0,0,0.55) !important;
+  backdrop-filter: blur(10px) saturate(140%);
+}
+.challenges-minimal-theme .challenge-card-base:hover {
+  border-color: rgba(245,197,107,0.55) !important;
+  box-shadow: 0 0 0 1px rgba(245,197,107,0.35), 0 8px 26px -8px rgba(245,197,107,0.25) !important;
+}
+.challenges-minimal-theme .challenge-card-base:before,
+.challenges-minimal-theme .challenge-card-base:after { display:none !important; }
+
+/* Neutralize variant backgrounds so selection keeps consistent look */
+.challenges-minimal-theme .challenge-card-base[class*='variant-'] { background: rgba(15,23,42,0.65) !important; }
+
+/* Progress bar refinement */
+.challenges-minimal-theme .challenge-card-base .h-1\.5 > div { filter: drop-shadow(0 0 4px rgba(245,197,107,0.4)); }
+
+/* Section headers line subtle */
+.challenges-minimal-theme h2.text-lg + .h-px { background: linear-gradient(to right, rgba(71,85,105,0.5), transparent) !important; }
+
+/* Timeline line + dots */
+.challenges-minimal-theme .relative > .absolute.left-4.w-px { background: linear-gradient(to bottom, rgba(245,197,107,0.5), rgba(71,85,105,0.3)) !important; }
+.challenges-minimal-theme .relative > .space-y-10 .absolute.-left-5.w-3.h-3 { background: linear-gradient(135deg,#f5c56b,#d7b56d) !important; box-shadow:0 0 0 3px rgba(15,23,42,0.9),0 0 12px -2px rgba(245,197,107,0.5) !important; }
+
+/* Table mode adjustments */
+.challenges-minimal-theme table.min-w-full { background: rgba(15,23,42,0.55); }
+.challenges-minimal-theme table.min-w-full thead { background: rgba(15,23,42,0.8); }
+.challenges-minimal-theme table.min-w-full tbody tr:hover { background: rgba(30,41,59,0.5); }
+
+/* Highlight pill colors smoothing (status pills) */
+.challenges-minimal-theme .bg-emerald-500\/15 { background: rgba(16,185,129,0.12) !important; }
+.challenges-minimal-theme .bg-sky-500\/15 { background: rgba(14,165,233,0.12) !important; }
+.challenges-minimal-theme .bg-slate-500\/15 { background: rgba(100,116,139,0.12) !important; }
+
+/* Winner proof link color unify */
+.challenges-minimal-theme a.text-sky-300 { color:#7dd3fc; }
+.challenges-minimal-theme a.text-sky-300:hover { color:#bae6fd; }
+
+/* Remove excessive radial highlight on hover ring element inside cards */
+.challenges-minimal-theme .challenge-card-base > .pointer-events-none { display:none !important; }

@@ -1,0 +1,67 @@
+.latest-blocks-container {
+    background-color: #0F172A; /* tech-black */
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+}
+
+.latest-block-highlight {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: rgba(245, 158, 11, 0.1);
+    border: 1px solid #F59E0B; /* bitcoin-orange */
+    margin-bottom: 1rem;
+}
+
+.block-height {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    color: #FBBF24; /* accent-gold */
+    text-decoration: none;
+}
+.block-height:hover {
+    text-decoration: underline;
+}
+
+.block-age {
+    color: #94A3B8; /* secondary-text */
+}
+
+.block-finder {
+    color: #F1F5F9; /* primary-text */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.other-blocks-list {
+    max-height: 300px; /* Adjust as needed */
+    overflow-y: auto;
+}
+
+.block-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #3A4A60; /* dark-blue-border */
+}
+
+.block-height-small {
+    font-family: 'Roboto Mono', monospace;
+    color: #0EA5E9; /* hologram-cyan */
+    text-decoration: none;
+}
+.block-height-small:hover {
+    text-decoration: underline;
+}
+
+.block-age-small, .block-finder-small {
+    color: #94A3B8; /* secondary-text */
+    font-size: 0.875rem;
+}

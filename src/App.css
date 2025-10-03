@@ -1,0 +1,177 @@
+/* Assurer que le canvas couvre tout l’écran */
+#background-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+
+/* React root au-dessus du canvas */
+#root {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+/* Section bloc miné */
+.dashboard-block {
+  margin: 1rem;
+  padding: 1rem;
+  background: rgba(42, 45, 58, 0.8);
+  border-radius: 8px;
+}
+
+@keyframes rotateGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.animated-radial-gradient {
+  position: relative;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(27, 42, 65, 0.05) 0%, rgba(27, 42, 65, 0) 70%);
+  background-size: 200% 200%;
+  animation: rotateGradient 15s linear infinite;
+}
+
+.animated-radial-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(27, 42, 65, 0.05) 0%, rgba(27, 42, 65, 0) 70%);
+  background-size: 200% 200%;
+  animation: rotateGradient 15s linear infinite reverse;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.animated-radial-gradient > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* For spark-burst-active */
+.spark-burst-active {
+  animation: spark-burst-anim 0.8s ease-out forwards;
+}
+
+@keyframes spark-burst-anim {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+/* For btc-glow */
+.btc-glow {
+  filter: drop-shadow(0 0 8px rgba(234, 179, 8, 0.8)) drop-shadow(0 0 20px rgba(234, 179, 8, 0.4));
+  animation: btc-glow-anim 1.5s infinite alternate;
+}
+
+@keyframes btc-glow-anim {
+  0% { filter: drop-shadow(0 0 8px rgba(234, 179, 8, 0.8)) drop-shadow(0 0 20px rgba(234, 179, 8, 0.4)); }
+  100% { filter: drop-shadow(0 0 12px rgba(234, 179, 8, 1)) drop-shadow(0 0 30px rgba(234, 179, 8, 0.6)); }
+}
+
+@keyframes fade-in-out {
+  0% { opacity: 0; transform: translateY(50px) scale(0.9); } /* Start further down and slightly smaller */
+  15% { opacity: 1; transform: translateY(0) scale(1); }  /* Slide up, scale to normal, fade in */
+  85% { opacity: 1; transform: translateY(0) scale(1); }  /* Stay visible */
+  100% { opacity: 0; transform: translateY(50px) scale(0.9); } /* Slide down, scale out, fade out */
+}
+
+.animate-fade-in-out {
+  animation: fade-in-out 6s ease-in-out forwards; /* Increased duration to 6s for slower, smoother effect */
+}
+
+/* Sparkle Burst Animation */
+@keyframes sparkle-fade-in-out {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes sparkle-move {
+    0% { transform: translate(0, 0) scale(0.5); }
+    100% { transform: translate(var(--tx), var(--ty)) scale(1.5); }
+}
+
+.sparkle-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.sparkle {
+    position: absolute;
+    background-color: rgba(234, 179, 8, 0.8); /* Gold color */
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    opacity: 0;
+    animation: sparkle-fade-in-out 1s forwards, sparkle-move 1s forwards;
+}
+
+/* New Block Flash Animation */
+@keyframes new-block-flash-animation {
+    0% {
+        box-shadow: 0 0 0px rgba(245, 158, 11, 0);
+        border-color: rgba(245, 158, 11, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(245, 158, 11, 0.8);
+        border-color: rgba(245, 158, 11, 1);
+    }
+    100% {
+        box-shadow: 0 0 0px rgba(245, 158, 11, 0);
+        border-color: rgba(245, 158, 11, 0.2);
+    }
+}
+
+.new-block-flash {
+    animation: new-block-flash-animation 1.5s ease-out;
+}
+
+/* Bitcoin Logo Pulse Animation */
+@keyframes pulse-once {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-pulse-once {
+    animation: pulse-once 0.5s ease-in-out;
+}
+
+/* Custom Scrollbar for Recent Transactions */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #0F1A2E; /* dark-blue-card */
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #F59E0B; /* bitcoin-orange */
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #EAB308; /* accent-gold */
+}
+
+.text-glow-accent-gold-subtle {
+    filter: drop-shadow(0 0 4px rgba(234, 179, 8, 0.5));
+}
