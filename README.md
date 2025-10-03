@@ -22,7 +22,6 @@
 - **React 19** + **Tailwind CSS**
 - **Framer Motion** animations
 - **Recharts** for statistics  
-- **Custom cyberpunk theme**
 
 ## 📦 Installation
 
