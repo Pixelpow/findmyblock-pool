@@ -25,7 +25,7 @@
 
 ## 📦 Installation
 
-git clone https://github.com/YOUR_USERNAME/findmyblock-pool.git
+git clone https://github.com/Pixelpow/findmyblock-pool.git
 cd findmyblock-pool
 npm install
 npm start
