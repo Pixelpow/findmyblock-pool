@@ -43,7 +43,7 @@ text
 ## 🙏 Credits
 
 - **Backend:** [Benjamin Wilson](https://github.com/benjamin-wilson) - public-pool
-- **Interface:** Developed by [YOUR_NAME]
+- **Interface:** Developed by [Pixel]
 
 ## 📞 Contact
 
