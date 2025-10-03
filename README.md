@@ -18,7 +18,7 @@ Web interface for anonymous Bitcoin solo mining.
 ## 📦 Installation
 
 If you want to run the interface locally:
-git clone https://github.com/YOUR_USERNAME/findmyblock-pool.git
+git clone https://github.com/pixelpow/findmyblock-pool.git
 cd findmyblock-pool
 npm install
 npm start
